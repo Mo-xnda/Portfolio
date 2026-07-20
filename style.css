@@ -20,7 +20,7 @@ body.home-bg {
 }
 
 body.about-bg {
-    background-image: url('image.png');
+    background-image: url('pinkback.jpg');
 }
 
 body.about-bg::before {
@@ -64,7 +64,7 @@ body.links-bg {
 
 .nav-pill {
     text-decoration: none;
-    color: #ffffff;
+    color: #de5d83;
     border: 1px solid #de5d83;
     border-radius: 50px;
     padding: 8px 25px;
