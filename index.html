@@ -80,8 +80,8 @@
 
         <!-- Calendar Widget -->
         <div class="draggable widget calendar-widget" style="bottom: 15%; right: 5%;">
-            <div class="widget-title-center">July</div>
-            <div class="calendar-grid">
+            <div class="widget-title-center" id="calendar-month"></div>
+            <div class="calendar-grid" id="calendar-grid">
                 <div class="calendar-day-header">S</div>
                 <div class="calendar-day-header">M</div>
                 <div class="calendar-day-header">T</div>
@@ -89,38 +89,6 @@
                 <div class="calendar-day-header">T</div>
                 <div class="calendar-day-header">F</div>
                 <div class="calendar-day-header">S</div>
-                <div class="calendar-day"></div>
-                <div class="calendar-day">1</div>
-                <div class="calendar-day">2</div>
-                <div class="calendar-day">3</div>
-                <div class="calendar-day">4</div>
-                <div class="calendar-day">5</div>
-                <div class="calendar-day">6</div>
-                <div class="calendar-day">7</div>
-                <div class="calendar-day">8</div>
-                <div class="calendar-day">9</div>
-                <div class="calendar-day">10</div>
-                <div class="calendar-day">11</div>
-                <div class="calendar-day">12</div>
-                <div class="calendar-day">13</div>
-                <div class="calendar-day">14</div>
-                <div class="calendar-day">15</div>
-                <div class="calendar-day">16</div>
-                <div class="calendar-day">17</div>
-                <div class="calendar-day">18</div>
-                <div class="calendar-day">19</div>
-                <div class="calendar-day">20</div>
-                <div class="calendar-day">21</div>
-                <div class="calendar-day">22</div>
-                <div class="calendar-day">23</div>
-                <div class="calendar-day">24</div>
-                <div class="calendar-day">25</div>
-                <div class="calendar-day">26</div>
-                <div class="calendar-day">27</div>
-                <div class="calendar-day">28</div>
-                <div class="calendar-day">29</div>
-                <div class="calendar-day">30</div>
-                <div class="calendar-day">31</div>
             </div>
         </div>
 
@@ -215,28 +183,58 @@
         
         document.body.className = 'home-bg';
 
-        // Highlight today date in calendar
-        function highlightToday() {
+        // Generate Dynamic Calendar
+        function generateCalendar() {
             const today = new Date();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
             const currentDay = today.getDate();
             
-            const calendarDays = document.querySelectorAll('.calendar-day');
-            calendarDays.forEach(day => {
-                if (day.textContent == currentDay) {
-                    day.classList.add('current');
+            // Month names
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            // Set month title
+            document.getElementById('calendar-month').textContent = monthNames[currentMonth];
+            
+            // Get first day of month and total days in month
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            
+            // Get calendar grid
+            const calendarGrid = document.getElementById('calendar-grid');
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                
+                // Highlight current day
+                if (day === currentDay) {
+                    dayElement.classList.add('current');
                 }
-            });
+                
+                calendarGrid.appendChild(dayElement);
+            }
         }
         
         // Call the function when page loads
-        highlightToday();
+        generateCalendar();
 
         // Random Fun Facts
         const funFacts = [
             "The Python language isn't named after the snake. Its creator, Guido van Rossum, named it after the British comedy troupe Monty Python's Flying Circus.",
             "Women were the original pioneers of computer programming, writing the world's very first algorithms. In fact, computing was initially viewed as clerical 'women's work' until its immense economic power was recognized and male professionals began to dominate the field",
             "The first computer programmer was a woman named Ada Lovelace in the 1840s.",
-            "I can speak mildly speak and understand Spanish",
+            "I can mildly speak and understand Spanish",
             "The first computer programmer in the world was a famous female mathematician",
             "The youngest female coder was only 6 years old when she released her first app",
             "Margaret Hamilton led the team at MIT that developed the onboard flight software for the Apollo space missions. The code she created successfully landed humans on the moon",
