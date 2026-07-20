@@ -225,8 +225,8 @@ This is a personal portfolio project.
 **Mosetsanakgape Mafuma**
 - Age: 25
 - Gender: Female
-- Location: Mozambique/Maputo Matuna, African
-- Languages: Fluent in English & Setho/tswan, Mildly fluent in Afrikaans
+- Location: Lichtenburg/North West, South Africa
+- Languages: Fluent in English & Setho/Tswana, Mildly fluent in Afrikaans/Zulu
 - LinkedIn: [mosetsanakgape-mafuma](https://www.linkedin.com/in/mosetsanakgape-mafuma/)
 - GitHub: [Mo-xnda](https://github.com/Mo-xnda)
 - Email: mosetsanakgape@gmail.com
