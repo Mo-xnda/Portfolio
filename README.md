@@ -1,48 +1,56 @@
-# 🌸 Portfolio Website - Mosetsanakgape Mafuma
+# Portfolio Website - Mosetsanakgape Mafuma
 
 A retro-inspired, interactive portfolio website featuring a desktop-style interface with draggable widgets, dynamic backgrounds, and responsive design.
 
-## ✨ Features
+##Features
 
-### 🏠 Home Page
+### Home Page
 - **Interactive Desktop Environment** with draggable widgets
 - **Fun Facts Widget** - Random tech and personal facts that change on each page reload
   - Women in computing history
   - Personal language skills (Spanish, Hindi, High Valyrian)
   - Unique talents and achievements
 - **Polaroid Photo Gallery** - Showcasing personal and project photos
+  - **Interactive Animations**: Click polaroid item1 to show pink flowers 
+  - **Interactive Animations**: Click polaroid item3 to illuminate pink stars and moon
 - **Note Widget** - Personal information display
 - **Music Player** - Functional audio player with controls (play, pause, skip, stop, seek)
 - **Calendar Widget** - Auto-highlights current date
 - **Custom Background** - image.png
 
-### 👤 About Page
-- **Blurred Background** - Aesthetic image.jpg with 30px blur effect
-- **Skills Folder** - Displays technical skills with scattered polaroid photos
-  - Microsoft Excel, Word
-  - Python, HTML, CSS, JavaScript, PHP, Laravel
-  - Visual Studio, SQL Database
-  - Analytics & Statistics
-- **Work Experience Folder** - Professional journey
+### About Page
+- **Custom Background** - plainpink.png with blurred image.jpg overlay
+- **Manila Folder Design** - Realistic folder styling with tabs
+- **Skills Folder** - Displays technical skills in 2-column list format
+  - Handwritten-style font (Lucida Handwriting)
+  - Paper-like background (#f5f5dc)
+  - Skills: Microsoft Excel, Word, Python, HTML, CSS, JavaScript, Visual Studio, SQL Database, Analytics, Statistics, PHP, Laravel
+  - Scattered polaroid photos overlaying folder
+- **Work Experience Folder** - Professional journey in list format
+  - Handwritten-style font (Lucida Handwriting)
+  - Paper-like background
   - NWK Learnership Programme (2025-2026)
   - NWK Programmer (2026-Current)
 
-### 📧 Contact Page
+###Contact Page
 - **Custom Background** - pinkcheckered.jpg pattern
-- **Polaroid Photos** - GitHub and LinkedIn visual representations
+- **Polaroid Photos** - GitHub, LinkedIn, and Email visual representations
 - **Social Links** with Font Awesome icons
   - GitHub profile link
   - LinkedIn profile link
+  - Email link (mailto:mosetsanakgape@gmail.com)
 
-## 🎨 Design Features
+##Design 
 
 - **Retro Aesthetic** - Pink color scheme (#ffc1cc, #e75480, #ff69b4)
+- **Manila Folder Aesthetic** - Tan/beige folders (#d4a574) with realistic tabs
 - **Draggable Elements** - All widgets can be repositioned
+- **Interactive Animations** - Click polaroids to trigger pink flowers or stars & moon
 - **Smooth Transitions** - Page navigation with background changes
 - **Hover Effects** - Interactive buttons and links
-- **Custom Fonts** - Courier New for retro feel, Georgia for titles
+- **Custom Fonts** - Courier New for retro feel, Georgia for titles, Lucida Handwriting for folder content
 
-## 📱 Responsive Design
+##Interactive Design
 
 The portfolio is fully responsive with three breakpoints:
 
@@ -51,7 +59,7 @@ The portfolio is fully responsive with three breakpoints:
 - **Tablet Portrait** (≤768px) - Vertical stacking of elements
 - **Mobile** (≤480px) - Mobile-optimized layout with touch-friendly controls
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom styling, animations, and responsive design
@@ -59,9 +67,9 @@ The portfolio is fully responsive with three breakpoints:
 - **Font Awesome 6.4.0** - Social media icons
 - **Node.js** - Local development server
 
-## 📂 Project Structure
+##Project Structure
 
-```
+
 Portfolio/
 ├── index.html          # Main HTML file
 ├── style.css           # Stylesheet with responsive design
@@ -85,11 +93,14 @@ Portfolio/
 │   ├── nwk.jpg         # Work experience photo
 │   ├── NWK4.jpg        # Work experience photo
 │   ├── github.jpg      # Contact photo
-│   └── linkin.jpg      # Contact photo
+│   ├── linkin.jpg      # Contact photo
+│   ├── email.jpg       # Contact photo
+│   ├── plainpink.png   # About page background
+│   └── pinkback.jpg    # Background image
 └── liquid-daylight-ra-main-version-49029-02-47.mp3  # Music file
-```
 
-## 🚀 Getting Started
+
+## Started
 
 ### Prerequisites
 - Node.js installed on your system
@@ -104,33 +115,42 @@ Portfolio/
 ### Running the Portfolio
 
 #### Method 1: Using Node.js Server
-```bash
+bash
 node server.js
-```
+
 Then open your browser and navigate to:
-```
+
 http://localhost:8000
-```
+
+or open in GitHub Pages
 
 #### Method 2: Direct File Opening
 Simply open `index.html` in your web browser (some features like audio may require a local server)
 
-## 🎵 Music Player Controls
+## Music Player Controls
 
-- **▶ Play** - Start audio playback
-- **⏸ Pause** - Pause audio
-- **⏹ Stop** - Stop and reset audio
-- **⏮ Skip Backward** - Jump back 10 seconds
-- **⏭ Skip Forward** - Jump forward 10 seconds
-- **Progress Bar** - Click to seek to specific time
+- Start audio playback
+- Pause audio
+- Stop and reset audio
+- Jump back 10 seconds
+- Jump forward 10 seconds
+- Click to seek to specific time
 
-## 🎯 Key Features Explained
+##Key Features Explained
 
 ### Random Fun Facts
 JavaScript randomly selects and displays one of 10 different facts each time the page loads, including:
 - Women's contributions to computing history
 - Personal achievements and language skills
 - Historical tech milestones
+
+### Interactive Polaroid Animations
+- **Item1 (FlowerCar)**: Click to toggle pink flowers across the screen
+  - 12 flowers with bloom and sway animations
+  - Pink glow effects
+- **Item3 (Computer)**: Click to toggle pink stars and moon
+  - 8 twinkling stars with floating animation
+  - Glowing moon with pink/gold aura
 
 ### Auto-Highlighting Calendar
 JavaScript automatically detects and highlights the current date in the calendar widget.
@@ -144,68 +164,74 @@ All desktop widgets can be dragged and repositioned using mouse interactions.
 ### Responsive Images
 All images use `object-fit: cover` for optimal display across different screen sizes.
 
-## 🎨 Color Palette
+##Color Palette is mainly pink
 
 - **Primary Pink**: #ffc1cc
 - **Accent Pink**: #e75480
 - **Hot Pink**: #ff69b4
+- **Manila Tan**: #d4a574
+- **Folder Tab**: #c49563
+- **Paper Beige**: #f5f5dc
 - **White**: #ffffff
 - **Text Shadow**: rgba(0, 0, 0, 0.3)
 
-## 📝 HTML Entity Codes Used
+## HTML Entity Codes Used
 
-- Rose: `&#127801;` (🌹)
-- Sparkle: `&#10024;` (✨)
-- Bullet: `&#8226;` (•)
-- Play: `&#9654;` (▶)
-- Pause: `&#9208;` (⏸)
-- Stop: `&#9209;` (⏹)
-- Skip Back: `&#9198;` (⏮)
-- Skip Forward: `&#9197;` (⏭)
+- Rose: `&#127801;` 
+- Sparkle: `&#10024;` 
+- Bullet: `&#8226;` 
+- Play: `&#9654;` 
+- Pause: `&#9208;` 
+- Stop: `&#9209;` 
+- Skip Back: `&#9198;` 
+- Skip Forward: `&#9197;` 
 
-## 🔧 Customization
+## Customization
 
 ### Changing Background Images
 Update the CSS in `style.css`:
-```css
+css
 body.home-bg {
     background-image: url('your-image.png');
 }
-```
+
 
 ### Updating Personal Information
 Edit the note widget content in `index.html`:
-```html
+html
 <p class="note-text">&#127801; Your Name</p>
-```
+
 
 ### Modifying Skills
-Update the folder description in the About page section.
+Update the skills list in the About page section. Skills are displayed in a 2-column format with Lucida Handwriting font on a paper-like background.
 
 ### Adding New Widgets
 Follow the existing widget structure and add draggable class for repositioning.
 
-## 🌐 Browser Compatibility
+## Browser Compatibility
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ⚠️ Internet Explorer (not supported)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Internet Explorer (not supported)
 
-## 📄 License
+## License
 
 This is a personal portfolio project.
 
-## 👤 Author
+## Author:
 
 **Mosetsanakgape Mafuma**
-- Age: 26
+- Age: 25
 - Gender: Female
+- Location: Mozambique/Maputo Matuna, African
+- Languages: Fluent in English & Setho/tswan, Mildly fluent in Afrikaans
 - LinkedIn: [mosetsanakgape-mafuma](https://www.linkedin.com/in/mosetsanakgape-mafuma/)
 - GitHub: [Mo-xnda](https://github.com/Mo-xnda)
+- Email: mosetsanakgape@gmail.com
 
-## 🙏 Acknowledgments
+## Reference
 
 - Font Awesome for social media icons
 - Monty Python for inspiring Python's name (as mentioned in Fun Facts!)
@@ -213,4 +239,4 @@ This is a personal portfolio project.
 
 ---
 
-Made with 💖 and lots of pink!
+Made with love and lots of pink!

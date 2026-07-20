@@ -335,11 +335,23 @@ body.links-bg {
     position: absolute;
     width: 280px;
     height: 240px;
-    background: #ffc1cc;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #d4a574;
+    border-radius: 3px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     left: 50%;
     transform: translateX(-50%);
+}
+
+.folder-bg::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 100px;
+    height: 20px;
+    background: #f5f5dc;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .folder-photos {
@@ -365,19 +377,97 @@ body.links-bg {
 
 .folder-title {
     font-size: 48px;
-    color: #ffc1cc;
+    color: #8b6f47;
     text-align: center;
     margin-bottom: 15px;
     font-family: 'Georgia', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    background: #f5f5dc;
+    padding: 20px 30px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .folder-description {
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #333;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.8;
+    text-shadow: none;
+    background: #f5f5dc;
+    padding: 15px 25px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-family: 'Lucida Handwriting', cursive;
+    max-width: 400px;
+    margin: 0 auto;
+    list-style-position: inside;
+}
+
+.skills-list {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+
+/*Fun*/
+/* Pink Flowers Animation */
+.flower {
+    position: fixed;
+    font-size: 40px;
+    pointer-events: none;
+    animation: bloom 3s ease-in-out infinite, sway 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px #ff69b4);
+    z-index: 9999;
+}
+
+@keyframes bloom {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.15) rotate(5deg); opacity: 0.9; }
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(10px); }
+}
+
+/* Pink Stars and Moon Animation */
+.star {
+    position: fixed;
+    font-size: 30px;
+    color: #ff69b4;
+    pointer-events: none;
+    animation: twinkle 2s ease-in-out infinite, float 3s ease-in-out infinite;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+    z-index: 9999;
+}
+
+.moon {
+    position: fixed;
+    font-size: 60px;
+    pointer-events: none;
+    animation: glow 2s ease-in-out infinite, float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffb6c1);
+    z-index: 9999;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 40px #ffb6c1); }
+    50% { filter: drop-shadow(0 0 30px #ffd700) drop-shadow(0 0 60px #ff69b4); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
 /* Contact Page Styles */

@@ -41,7 +41,7 @@
         <div class="draggable polaroid" id="item2" style="top: 40%; left: 25%; transform: rotate(5deg);">
             <img src="books.png" >
         </div>
-        <div class="draggable polaroid" id="item2" style="top: 60%; left: 25%; transform: rotate(-5deg);">
+        <div class="draggable polaroid" id="item3" style="top: 60%; left: 25%; transform: rotate(-5deg);">
             <img src="computer.jpg" >
         </div>
 
@@ -58,7 +58,7 @@
                 <p class="note-text">&#127801; Female</p>
                 <p class="note-text">&#127801; African</p>
                 <p class="note-text">&#127801; Fluent in English & Sotho/Tswana</p>
-                <p class="note-text">&#127801; Mildly fluent in Afrikaans</p>
+                <p class="note-text">&#127801; Mildly fluent in Afrikaans/Zulu</p>
             </div>
         </div>
 
@@ -119,7 +119,20 @@
                     </div>
                 </div>
                 <div class="folder-title">Skills</div>
-                <p class="folder-description">Microsoft Excel, Microsoft word, Python, HTML, CSS, JavaScript, Visual Studio, SQL Database, Analytics, Statistics, PHP, Laravel</p>
+                <ul class="folder-description skills-list">
+                    <li>Microsoft Excel</li>
+                    <li>Microsoft Word</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Visual Studio</li>
+                    <li>SQL Database</li>
+                    <li>Analytics</li>
+                    <li>Statistics</li>
+                    <li>PHP</li>
+                    <li>Laravel</li>
+                </ul>
             </div>
 
             <!-- Work Experience Folder -->
@@ -142,7 +155,10 @@
                     </div>
                 </div>
                 <div class="folder-title">Work Experience</div>
-                <p class="folder-description">NWK Learnership Programme 2025-2026<br>NWK Programmer 2026-Current</p>
+                <ul class="folder-description">
+                    <li>NWK Learnership Programme 2025-2026</li>
+                    <li>NWK Programmer 2026-Current</li>
+                </ul>
             </div>
 
         </div>
@@ -160,12 +176,18 @@
                 <div class="contact-polaroid">
                     <img src="linkin.jpg" alt="linkedin">
                 </div>
+                
+                <!-- Polaroid 3 -->
+                <div class="contact-polaroid">
+                    <img src="email.jpg" alt="email">
+                </div>
             </div>
             
             <!-- Link Section -->
             <div class="contact-link-section">
                 <a href="https://github.com/Mo-xnda" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="www.linkedin.com/in/mosetsanakgape-mafuma" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/mosetsanakgape-mafuma" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:mosetsanakgape@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
             </div>
         </div>
     </div>
@@ -305,6 +327,105 @@
             pauseBtn.style.display = 'none';
             playBtn.style.display = 'inline-block';
             progressBar.style.width = '0%';
+        });
+
+        // Pink Stars and Moon Illumination for item3
+        const item3 = document.getElementById('item3');
+        let illuminationActive = false;
+        let illuminationElements = [];
+
+        function createStarsAndMoon() {
+            // Clear existing elements
+            illuminationElements.forEach(el => el.remove());
+            illuminationElements = [];
+
+            if (illuminationActive) {
+                // Create moon
+                const moon = document.createElement('div');
+                moon.className = 'moon';
+                moon.textContent = '🌙';
+                moon.style.top = '10%';
+                moon.style.right = '15%';
+                document.body.appendChild(moon);
+                illuminationElements.push(moon);
+
+                // Create multiple pink stars
+                const starPositions = [
+                    { top: '15%', left: '20%' },
+                    { top: '25%', right: '25%' },
+                    { top: '35%', left: '15%' },
+                    { top: '20%', left: '50%' },
+                    { top: '40%', right: '10%' },
+                    { top: '30%', left: '70%' },
+                    { top: '45%', right: '40%' },
+                    { top: '18%', left: '35%' }
+                ];
+
+                starPositions.forEach((pos, index) => {
+                    setTimeout(() => {
+                        const star = document.createElement('div');
+                        star.className = 'star';
+                        star.textContent = '✨';
+                        Object.assign(star.style, pos);
+                        document.body.appendChild(star);
+                        illuminationElements.push(star);
+                    }, index * 100);
+                });
+            }
+        }
+
+        item3.addEventListener('click', (e) => {
+            e.stopPropagation();
+            illuminationActive = !illuminationActive;
+            createStarsAndMoon();
+        });
+
+        // Pink Flowers for item1
+        const item1 = document.getElementById('item1');
+        let flowersActive = false;
+        let flowerElements = [];
+
+        function createFlowers() {
+            // Clear existing flowers
+            flowerElements.forEach(el => el.remove());
+            flowerElements = [];
+
+            if (flowersActive) {
+                // Create multiple pink flowers
+                const flowerPositions = [
+                    { top: '20%', left: '15%' },
+                    { top: '30%', left: '25%' },
+                    { top: '50%', left: '10%' },
+                    { top: '60%', left: '30%' },
+                    { top: '40%', left: '5%' },
+                    { top: '70%', left: '20%' },
+                    { top: '25%', right: '20%' },
+                    { top: '45%', right: '15%' },
+                    { top: '65%', right: '25%' },
+                    { top: '35%', right: '10%' },
+                    { top: '55%', left: '50%' },
+                    { top: '75%', left: '45%' }
+                ];
+
+                const flowerEmojis = ['🌸', '🌺', '🌷', '🌹', '💐'];
+
+                flowerPositions.forEach((pos, index) => {
+                    setTimeout(() => {
+                        const flower = document.createElement('div');
+                        flower.className = 'flower';
+                        flower.textContent = flowerEmojis[index % flowerEmojis.length];
+                        Object.assign(flower.style, pos);
+                        document.body.appendChild(flower);
+                        flowerElements.push(flower);
+                    }, index * 80);
+                });
+            }
+        }
+
+        item1.addEventListener('click', (e) => {
+            e.stopPropagation();
+            flowersActive = !flowersActive;
+            createFlowers();
         });
     </script>
 </body>
