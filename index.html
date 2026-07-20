@@ -25,8 +25,7 @@
                 <span class="sparkle">&#10024;</span>
             </div>
             <div class="widget-content">
-                <p class="reminder-text"> The Python language isn't named after the snake. Its creator, Guido van Rossum, named it after the British comedy troupe Monty Python's Flying Circus</p>
-
+                <p class="reminder-text" id="fun-fact-text"></p>
             </div>
         </div>
 
@@ -198,7 +197,7 @@
             <!-- Link Section -->
             <div class="contact-link-section">
                 <a href="https://github.com/Mo-xnda" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/mosetsanakgape-mafuma/?skipRedirect=true" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="www.linkedin.com/in/mosetsanakgape-mafuma" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </div>
@@ -231,6 +230,28 @@
         
         // Call the function when page loads
         highlightToday();
+
+        // Random Fun Facts
+        const funFacts = [
+            "The Python language isn't named after the snake. Its creator, Guido van Rossum, named it after the British comedy troupe Monty Python's Flying Circus.",
+            "Women were the original pioneers of computer programming, writing the world's very first algorithms. In fact, computing was initially viewed as clerical 'women's work' until its immense economic power was recognized and male professionals began to dominate the field",
+            "The first computer programmer was a woman named Ada Lovelace in the 1840s.",
+            "I can speak mildly speak and understand Spanish",
+            "The first computer programmer in the world was a famous female mathematician",
+            "The youngest female coder was only 6 years old when she released her first app",
+            "Margaret Hamilton led the team at MIT that developed the onboard flight software for the Apollo space missions. The code she created successfully landed humans on the moon",
+            "During World War II, the vast majority of codebreakers at Bletchley Park and the programmers of the U.S. Army's ENIAC computer (the first electronic programmable computer) were women",
+            "I am learning Hindi and High Valyrian",
+            "I have mastered the skill of typing in over 2cm long nails"
+        ];
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            document.getElementById('fun-fact-text').textContent = funFacts[randomIndex];
+        }
+
+        // Display a random fact when page loads
+        displayRandomFact();
 
         // Music Player Functions
         const audio = document.getElementById('audio-player');

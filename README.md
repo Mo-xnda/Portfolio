@@ -6,7 +6,10 @@ A retro-inspired, interactive portfolio website featuring a desktop-style interf
 
 ### 🏠 Home Page
 - **Interactive Desktop Environment** with draggable widgets
-- **Fun Facts Widget** - Python programming trivia
+- **Fun Facts Widget** - Random tech and personal facts that change on each page reload
+  - Women in computing history
+  - Personal language skills (Spanish, Hindi, High Valyrian)
+  - Unique talents and achievements
 - **Polaroid Photo Gallery** - Showcasing personal and project photos
 - **Note Widget** - Personal information display
 - **Music Player** - Functional audio player with controls (play, pause, skip, stop, seek)
@@ -123,6 +126,12 @@ Simply open `index.html` in your web browser (some features like audio may requi
 
 ## 🎯 Key Features Explained
 
+### Random Fun Facts
+JavaScript randomly selects and displays one of 10 different facts each time the page loads, including:
+- Women's contributions to computing history
+- Personal achievements and language skills
+- Historical tech milestones
+
 ### Auto-Highlighting Calendar
 JavaScript automatically detects and highlights the current date in the calendar widget.
 
@@ -193,8 +202,8 @@ This is a personal portfolio project.
 **Mosetsanakgape Mafuma**
 - Age: 26
 - Gender: Female
-- LinkedIn: [Profile Link](https://www.linkedin.com/in/mosetsanakgape-mafuma/)
-- GitHub: [Your GitHub Profile([https://github.com/Mo-xnda](https://github.com/Mo-xnda))]
+- LinkedIn: [mosetsanakgape-mafuma](https://www.linkedin.com/in/mosetsanakgape-mafuma/)
+- GitHub: [Mo-xnda](https://github.com/Mo-xnda)
 
 ## 🙏 Acknowledgments
 
