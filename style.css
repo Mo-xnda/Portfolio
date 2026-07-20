@@ -1,0 +1,618 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* Retro font feel */
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+}
+
+body.home-bg {
+    background-image: url('image.png');
+}
+
+body.about-bg {
+    background-image: url('image.png');
+}
+
+body.about-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+body.contact-bg {
+    background-image: url('pinkcheckered.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body.links-bg {
+    background-color: #ffc1cc; 
+    background-image: linear-gradient(45deg, #ffc1cc 25%, #e75480 25%, #e75480 50%, #ffc1cc 50%, #ffc1cc 75%, #e75480 75%, #e75480 100%);
+    background-size: 40px 40px;
+}
+
+/* Pill Navigation */
+.top-nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-pill {
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #de5d83;
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-size: 14px;
+    background-color: #ffd1dc; /* Semi-transparent */
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-pill:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Draggable Elements Base */
+.draggable {
+    position: absolute;
+    cursor: grab;
+    z-index: 10;
+}
+
+.draggable:active {
+    cursor: grabbing;
+    z-index: 100; /* Brings the dragged item to the front */
+}
+
+/* Polaroid Styling */
+.polaroid {
+    background: white;
+    padding: 10px 10px 30px 10px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg); /* Slight messy rotation */
+    width: 170px;
+    transition: transform 0.2s ease;
+}
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* Prevents image dragging issues */
+}
+
+.polaroid .caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Retro Icon Styling */
+.retro-icon {
+    text-align: center;
+    width: 90px;
+}
+
+.retro-icon img {
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.retro-icon .caption {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Page System */
+.page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+.desktop-environment {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Widget Base Styles */
+.widget {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.widget-title {
+    font-size: 18px;
+    color: #ff69b4;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.widget-title-center {
+    text-align: center;
+    font-size: 18px;
+    color: #ff69b4;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Reminder Widget */
+.reminder-widget {
+    width: 250px;
+    min-height: 200px;
+}
+
+.reminder-widget .widget-content p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Note Widget */
+.note-widget {
+    width: 400px;
+}
+
+.note-text {
+    font-size: 16px;
+    color: #ff69b4;
+    text-align: left;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* Polaroid Large */
+.polaroid-large {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+}
+
+.polaroid-large img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Music Player Widget */
+.music-widget {
+    width: 280px;
+    padding: 20px;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.music-btn {
+    background: #ffb6c1;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.music-btn:hover {
+    background: #ff69b4;
+    transform: scale(1.1);
+}
+
+.music-btn.play-btn {
+    width: 50px;
+    height: 50px;
+    background: #ff69b4;
+    font-size: 20px;
+}
+
+.music-progress {
+    width: 100%;
+    height: 4px;
+    background: #ffe4e1;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 60%;
+    height: 100%;
+    background: #ff69b4;
+    border-radius: 2px;
+}
+
+/* Calendar Widget */
+.calendar-widget {
+    width: 240px;
+    padding: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 12px;
+    color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+    background: #ffe4e1;
+}
+
+.calendar-day.current {
+    background: #ff69b4;
+    color: white;
+    font-weight: bold;
+}
+
+/* Folder Sections for About Page */
+.folder-section {
+    width: 400px;
+}
+
+.folder-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
+.folder-bg {
+    position: absolute;
+    width: 280px;
+    height: 240px;
+    background: #ffc1cc;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.folder-photos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item {
+    background: white;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.folder-title {
+    font-size: 48px;
+    color: #ffc1cc;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.folder-description {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 15vh;
+}
+
+.contact-polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.contact-polaroid:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.contact-polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.contact-polaroid img {
+    display: block;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.contact-link-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact-link {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #ff69b4;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: #ff69b4;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design - Media Queries */
+
+/* Tablets and smaller laptops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .widget {
+        transform: scale(0.9);
+    }
+    
+    .polaroid-large {
+        width: 250px;
+    }
+    
+    .folder-section {
+        width: 350px;
+    }
+    
+    .folder-title {
+        font-size: 40px;
+    }
+    
+    .folder-description {
+        font-size: 14px;
+    }
+}
+
+/* Tablets portrait mode (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .top-nav {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .nav-pill {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    
+    /* Stack widgets vertically on smaller screens */
+    .desktop-environment {
+        position: relative;
+        padding: 20px;
+    }
+    
+    .draggable {
+        position: relative !important;
+        margin: 20px auto;
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+    }
+    
+    .widget {
+        max-width: 90%;
+    }
+    
+    .polaroid-large {
+        width: 200px;
+        margin: 0 auto;
+    }
+    
+    /* About page folders stack vertically */
+    .folder-section {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 30px auto;
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .folder-title {
+        font-size: 36px;
+    }
+    
+    /* Contact page */
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 10vh;
+    }
+    
+    .contact-polaroid img {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .contact-link {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .top-nav {
+        padding: 10px;
+        gap: 5px;
+    }
+    
+    .nav-pill {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+    
+    .widget {
+        max-width: 95%;
+    }
+    
+    .reminder-widget,
+    .note-widget {
+        width: 100%;
+    }
+    
+    .polaroid-large {
+        width: 150px;
+    }
+    
+    .polaroid img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .music-widget {
+        width: 100%;
+    }
+    
+    .calendar-widget {
+        width: 100%;
+    }
+    
+    .folder-section {
+        width: 95%;
+    }
+    
+    .folder-container {
+        height: 240px;
+    }
+    
+    .folder-bg {
+        width: 240px;
+        height: 200px;
+    }
+    
+    .folder-title {
+        font-size: 28px;
+    }
+    
+    .folder-description {
+        font-size: 12px;
+    }
+    
+    .photo-item {
+        padding: 5px;
+    }
+    
+    .contact-polaroid img {
+        width: 150px;
+        height: 180px;
+    }
+    
+    .contact-link {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+    
+    .contact-link-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}

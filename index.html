@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#home" class="nav-pill" onclick="showPage('home')">home</a>
+        <a href="#about" class="nav-pill" onclick="showPage('about')">about</a>
+        <a href="#contact" class="nav-pill" onclick="showPage('contact')">contact</a>
+    </nav>
+
+    <div id="home-page" class="page active">
+        <div class="desktop-environment">
+
+        <!-- Fun facts Widget -->
+        <div class="draggable widget reminder-widget" style="top: 10%; left: 5%;">
+            <div class="widget-header">
+                <span class="widget-title">Fun Facts</span>
+                <span class="sparkle">&#10024;</span>
+            </div>
+            <div class="widget-content">
+                <p class="reminder-text"> The Python language isn't named after the snake. Its creator, Guido van Rossum, named it after the British comedy troupe Monty Python's Flying Circus</p>
+
+            </div>
+        </div>
+
+        <!-- Polaroid Photo Widget -->
+        <div class="draggable widget polaroid-large" style="top: 8%; left: 32%;">
+            <img src="blondie.jpg">
+        </div>
+
+        <div class="draggable polaroid" id="item1" style="top: 15%; left: 10%;">
+            <img src="flowerCar.jpg" alt="Project">
+        </div>
+
+        <div class="draggable polaroid" id="item2" style="top: 40%; left: 25%; transform: rotate(5deg);">
+            <img src="books.png" >
+        </div>
+        <div class="draggable polaroid" id="item2" style="top: 60%; left: 25%; transform: rotate(-5deg);">
+            <img src="computer.jpg" >
+        </div>
+
+
+        <!-- Note Widget -->
+        <div class="draggable widget note-widget" style="top: 10%; right: 5%;">
+            <div class="widget-header">
+                <span class="widget-title">Note</span>
+                <span class="widget-icon"></span>
+            </div>
+            <div class="widget-content">
+                <p class="note-text">&#127801; Mosetsanakgape Mafuma</p>
+                <p class="note-text">&#127801; 26 Years Old</p>
+                <p class="note-text">&#127801; Female</p>
+            </div>
+        </div>
+
+        <!-- Music Player Widget -->
+        <div class="draggable widget music-widget" style="bottom: 15%; left: 32%;">
+            <div class="widget-title-center">Press Play</div>
+            <audio id="audio-player" src="liquid-daylight-ra-main-version-49029-02-47.mp3"></audio>
+            <div class="music-controls">
+                <button class="music-btn" onclick="skipBackward()">&#9198;</button>
+                <button class="music-btn" id="pause-btn" onclick="pauseMusic()" style="display:none;">&#9208;</button>
+                <button class="music-btn play-btn" id="play-btn" onclick="playMusic()">&#9654;</button>
+                <button class="music-btn" onclick="skipForward()">&#9197;</button>
+                <button class="music-btn" onclick="stopMusic()">&#9209;</button>
+            </div>
+            <div class="music-progress" onclick="seekMusic(event)">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Calendar Widget -->
+        <div class="draggable widget calendar-widget" style="bottom: 15%; right: 5%;">
+            <div class="widget-title-center">July</div>
+            <div class="calendar-grid">
+                <div class="calendar-day-header">S</div>
+                <div class="calendar-day-header">M</div>
+                <div class="calendar-day-header">T</div>
+                <div class="calendar-day-header">W</div>
+                <div class="calendar-day-header">T</div>
+                <div class="calendar-day-header">F</div>
+                <div class="calendar-day-header">S</div>
+                <div class="calendar-day"></div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+
+    <div id="about-page" class="page">
+        <div class="desktop-environment">
+            
+            <!-- Skills Folder -->
+            <div class="folder-section" style="position: absolute; left: 15%; top: 15%;">
+                <div class="folder-container">
+                    <div class="folder-bg"></div>
+                    <div class="folder-photos">
+                        <div class="photo-item" style="position: absolute; left: 10px; top: 20px; transform: rotate(-5deg);rotate(-9deg);width: 80px; height: 90px;">
+                            <img src="html.jpg" alt="Coding">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 80px; top: 80px; transform: rotate(3deg);width: 80px; height: 90px;">
+                            <img src="jsccsa.jpg" alt="C++">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 150px; top: 50px; transform: rotate(-9deg);width: 80px; height: 90px;">
+                            <img src="vsc.jpg" alt="C++">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 50px; top: 140px; transform: rotate(-8deg);width: 80px; height: 100px;">
+                            <img src="cs.jpg" alt="Design">
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-title">Skills</div>
+                <p class="folder-description">Microsoft Excel, Microsoft word, Python, HTML, CSS, JavaScript, Visual Studio, SQL Database, Analytics, Statistics, PHP, Laravel</p>
+            </div>
+
+            <!-- Work Experience Folder -->
+            <div class="folder-section" style="position: absolute; right: 15%; top: 15%;">
+                <div class="folder-container">
+                    <div class="folder-bg"></div>
+                    <div class="folder-photos">
+                        <div class="photo-item" style="position: absolute; left: 20px; top: 15px; transform: rotate(2deg);width: 70px; height: 90px;">
+                            <img src="NWK3.jpg" alt="Project">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 90px; top: 40px; transform: rotate(-4deg); width: 80px; height: 100px;">
+                            <img src="nwk2.png" alt="Work">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 40px; top: 120px; transform: rotate(8deg); width: 70px; height: 90px;">
+                            <img src="nwk.jpg" alt="Achievement">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 130px; top: 100px; transform: rotate(-6deg);width: 70px; height: 90px;">
+                            <img src="NWK4.jpg" alt="Event">
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-title">Work Experience</div>
+                <p class="folder-description">NWK Learnership Programme 2025-2026<br>NWK Programmer 2026-Current</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contact-page" class="page">
+        <div class="desktop-environment">
+            <div class="contact-container">
+                <!-- Polaroid 1 -->
+                <div class="contact-polaroid">
+                    <img src="github.jpg" alt="github">
+                </div>
+                
+                <!-- Polaroid 2 -->
+                <div class="contact-polaroid">
+                    <img src="linkin.jpg" alt="linkedin">
+                </div>
+            </div>
+            
+            <!-- Link Section -->
+            <div class="contact-link-section">
+                <a href="https://github.com/yourusername" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/mosetsanakgape-mafuma/?skipRedirect=true" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="info.js"></script>
+    <script>
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageName + '-page').classList.add('active');
+            
+            const body = document.body;
+            body.className = pageName + '-bg';
+        }
+        
+        document.body.className = 'home-bg';
+
+        // Highlight today date in calendar
+        function highlightToday() {
+            const today = new Date();
+            const currentDay = today.getDate();
+            
+            const calendarDays = document.querySelectorAll('.calendar-day');
+            calendarDays.forEach(day => {
+                if (day.textContent == currentDay) {
+                    day.classList.add('current');
+                }
+            });
+        }
+        
+        // Call the function when page loads
+        highlightToday();
+
+        // Music Player Functions
+        const audio = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const progressBar = document.getElementById('progress-bar');
+
+        function playMusic() {
+            audio.play();
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'inline-block';
+        }
+
+        function pauseMusic() {
+            audio.pause();
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'inline-block';
+        }
+
+        function stopMusic() {
+            audio.pause();
+            audio.currentTime = 0;
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'inline-block';
+            progressBar.style.width = '0%';
+        }
+
+        function skipForward() {
+            audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
+        }
+
+        function skipBackward() {
+            audio.currentTime = Math.max(audio.currentTime - 10, 0);
+        }
+
+        function seekMusic(event) {
+            const progressContainer = event.currentTarget;
+            const clickX = event.offsetX;
+            const width = progressContainer.offsetWidth;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        }
+
+        // Update progress bar as music plays
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Auto switch to play button when music ends
+        audio.addEventListener('ended', () => {
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'inline-block';
+            progressBar.style.width = '0%';
+        });
+    </script>
+</body>
+</html>
