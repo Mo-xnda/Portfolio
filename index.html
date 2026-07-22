@@ -34,11 +34,15 @@
             <img src="blondie.jpg">
         </div>
 
-        <div class="draggable polaroid" id="item1" style="top: 15%; left: 10%;">
+        <div class="draggable widget polaroid-large" style="top:35%; right: 25%; transform: rotate(10deg);">
+            <img src="image.png">
+        </div>
+
+        <div class="draggable polaroid" id="item1" style="top: 38%; left: 10%;">
             <img src="flowerCar.jpg" alt="Project">
         </div>
 
-        <div class="draggable polaroid" id="item2" style="top: 40%; left: 25%; transform: rotate(5deg);">
+        <div class="draggable polaroid" id="item2" style="top: 15%; left: 25%; transform: rotate(5deg);">
             <img src="books.png" >
         </div>
         <div class="draggable polaroid" id="item3" style="top: 60%; left: 25%; transform: rotate(-5deg);">
@@ -62,8 +66,9 @@
             </div>
         </div>
 
+
         <!-- Music Player Widget -->
-        <div class="draggable widget music-widget" style="bottom: 15%; left: 32%;">
+        <!-- <div class="draggable widget music-widget" style="bottom: 15%; left: 32%;">
             <div class="widget-title-center">Press Play</div>
             <audio id="audio-player" src="liquid-daylight-ra-main-version-49029-02-47.mp3"></audio>
             <div class="music-controls">
@@ -76,6 +81,11 @@
             <div class="music-progress" onclick="seekMusic(event)">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
+        </div> -->
+
+        <!-- Spotify Player Widget -->
+        <div class="draggable widget spotify-widget" style="bottom: 15%; left: 40%;">
+            <iframe title="Spotify Playlist Player" data-testid="embed-iframe" style="border-radius:12px; border:0;" src="https://open.spotify.com/embed/playlist/1h18K9uW8ka2A3LglpQlfe?utm_source=generator&si=d42b9816eda040a7" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <!-- Calendar Widget -->
@@ -167,27 +177,36 @@
     <div id="contact-page" class="page">
         <div class="desktop-environment">
             <div class="contact-container">
-                <!-- Polaroid 1 -->
+
+                <!-- Polaroid 4 -->
                 <div class="contact-polaroid">
-                    <img src="github.jpg" alt="github">
+                    <img src="cellphone.jpg" alt="cellphone">
                 </div>
-                
+
+                <!-- Polaroid 3 -->
+                <div class="contact-polaroid">
+                    <img src="email.jpg" alt="email">
+                </div>
+
                 <!-- Polaroid 2 -->
                 <div class="contact-polaroid">
                     <img src="linkin.jpg" alt="linkedin">
                 </div>
                 
-                <!-- Polaroid 3 -->
+                <!-- Polaroid 1 -->
                 <div class="contact-polaroid">
-                    <img src="email.jpg" alt="email">
+                    <img src="github.jpg" alt="github">
                 </div>
+                
+                
             </div>
             
             <!-- Link Section -->
             <div class="contact-link-section">
-                <a href="https://github.com/Mo-xnda" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/mosetsanakgape-mafuma" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="tel:+27713568704" class="contact-link"><i class="fas fa-phone"></i> Phone</a>
                 <a href="mailto:mosetsanakgape@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/mosetsanakgape-mafuma" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Mo-xnda" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </div>
@@ -274,61 +293,6 @@
         // Display a random fact when page loads
         displayRandomFact();
 
-        // Music Player Functions
-        const audio = document.getElementById('audio-player');
-        const playBtn = document.getElementById('play-btn');
-        const pauseBtn = document.getElementById('pause-btn');
-        const progressBar = document.getElementById('progress-bar');
-
-        function playMusic() {
-            audio.play();
-            playBtn.style.display = 'none';
-            pauseBtn.style.display = 'inline-block';
-        }
-
-        function pauseMusic() {
-            audio.pause();
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'inline-block';
-        }
-
-        function stopMusic() {
-            audio.pause();
-            audio.currentTime = 0;
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'inline-block';
-            progressBar.style.width = '0%';
-        }
-
-        function skipForward() {
-            audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
-        }
-
-        function skipBackward() {
-            audio.currentTime = Math.max(audio.currentTime - 10, 0);
-        }
-
-        function seekMusic(event) {
-            const progressContainer = event.currentTarget;
-            const clickX = event.offsetX;
-            const width = progressContainer.offsetWidth;
-            const duration = audio.duration;
-            audio.currentTime = (clickX / width) * duration;
-        }
-
-        // Update progress bar as music plays
-        audio.addEventListener('timeupdate', () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = progress + '%';
-        });
-
-        // Auto switch to play button when music ends
-        audio.addEventListener('ended', () => {
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'inline-block';
-            progressBar.style.width = '0%';
-        });
-
         // Pink Stars and Moon Illumination for item3
         const item3 = document.getElementById('item3');
         let illuminationActive = false;
@@ -340,37 +304,38 @@
             illuminationElements = [];
 
             if (illuminationActive) {
-                // Create moon
+                // Create moon with random position
                 const moon = document.createElement('div');
                 moon.className = 'moon';
-                moon.textContent = '🌙';
-                moon.style.top = '10%';
-                moon.style.right = '15%';
+                moon.innerHTML = '&#127769;';
+                
+                const moonTop = Math.random() * 30 + 5;
+                const moonLeft = Math.random() * 80 + 10;
+                
+                moon.style.top = moonTop + '%';
+                moon.style.left = moonLeft + '%';
                 document.body.appendChild(moon);
                 illuminationElements.push(moon);
 
-                // Create multiple pink stars
-                const starPositions = [
-                    { top: '15%', left: '20%' },
-                    { top: '25%', right: '25%' },
-                    { top: '35%', left: '15%' },
-                    { top: '20%', left: '50%' },
-                    { top: '40%', right: '10%' },
-                    { top: '30%', left: '70%' },
-                    { top: '45%', right: '40%' },
-                    { top: '18%', left: '35%' }
-                ];
+                // Create multiple pink stars with random positions
+                const starCount = 8;
 
-                starPositions.forEach((pos, index) => {
+                for (let i = 0; i < starCount; i++) {
                     setTimeout(() => {
                         const star = document.createElement('div');
                         star.className = 'star';
-                        star.textContent = '✨';
-                        Object.assign(star.style, pos);
+                        star.innerHTML = '&#10024;';
+                        
+                        const randomTop = Math.random() * 50 + 10;
+                        const randomLeft = Math.random() * 80 + 10;
+                        
+                        star.style.top = randomTop + '%';
+                        star.style.left = randomLeft + '%';
+                        
                         document.body.appendChild(star);
                         illuminationElements.push(star);
-                    }, index * 100);
-                });
+                    }, i * 100);
+                }
             }
         }
 
@@ -391,34 +356,27 @@
             flowerElements = [];
 
             if (flowersActive) {
-                // Create multiple pink flowers
-                const flowerPositions = [
-                    { top: '20%', left: '15%' },
-                    { top: '30%', left: '25%' },
-                    { top: '50%', left: '10%' },
-                    { top: '60%', left: '30%' },
-                    { top: '40%', left: '5%' },
-                    { top: '70%', left: '20%' },
-                    { top: '25%', right: '20%' },
-                    { top: '45%', right: '15%' },
-                    { top: '65%', right: '25%' },
-                    { top: '35%', right: '10%' },
-                    { top: '55%', left: '50%' },
-                    { top: '75%', left: '45%' }
-                ];
+                // Create multiple pink flowers with random positions
+                const flowerEmojis = ['&#127800;', '&#127802;', '&#127799;', '&#127801;', '&#128144;'];
+                const flowerCount = 12;
 
-                const flowerEmojis = ['🌸', '🌺', '🌷', '🌹', '💐'];
-
-                flowerPositions.forEach((pos, index) => {
+                for (let i = 0; i < flowerCount; i++) {
                     setTimeout(() => {
                         const flower = document.createElement('div');
                         flower.className = 'flower';
-                        flower.textContent = flowerEmojis[index % flowerEmojis.length];
-                        Object.assign(flower.style, pos);
+                        flower.innerHTML = flowerEmojis[i % flowerEmojis.length];
+                        
+                        // Random position
+                        const randomTop = Math.random() * 80 + 10; 
+                        const randomLeft = Math.random() * 80 + 10; 
+                        
+                        flower.style.top = randomTop + '%';
+                        flower.style.left = randomLeft + '%';
+                        
                         document.body.appendChild(flower);
                         flowerElements.push(flower);
-                    }, index * 80);
-                });
+                    }, i * 80);
+                }
             }
         }
 

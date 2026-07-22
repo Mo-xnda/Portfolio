@@ -14,11 +14,13 @@ A retro-inspired, interactive portfolio website featuring a desktop-style interf
   - **Interactive Animations**: Click polaroid item1 to show pink flowers 
   - **Interactive Animations**: Click polaroid item3 to illuminate pink stars and moon
 - **Note Widget** - Personal information display
-- **Music Player** - Functional audio player with controls (play, pause, skip, stop, seek)
+- **Music Player** - Functional audio player with controls (play, pause, skip, stop, seek) - Disabled 
+- **Spotify Player** - Embedded Spotify playlist player
 - **Calendar Widget** - Auto-highlights current date
 - **Custom Background** - image.png
 
 ### About Page
+-**Interactive Desktop Environment** with draggable pictures in folder
 - **Custom Background** - plainpink.png with blurred image.jpg overlay
 - **Manila Folder Design** - Realistic folder styling with tabs
 - **Skills Folder** - Displays technical skills in 2-column list format
@@ -222,11 +224,11 @@ This is a personal portfolio project.
 
 ## Author:
 
-**Mosetsanakgape Mafuma**
+**Mosetsanakgape Mosebatho Salaminah Mafuma**
 - Age: 25
 - Gender: Female
 - Location: Lichtenburg/North West, South Africa
-- Languages: Fluent in English & Setho/Tswana, Mildly fluent in Afrikaans/Zulu
+- Languages: Fluent in English & Sotho/Tswana, Mildly fluent in Afrikaans/Zulu
 - LinkedIn: [mosetsanakgape-mafuma](https://www.linkedin.com/in/mosetsanakgape-mafuma/)
 - GitHub: [Mo-xnda](https://github.com/Mo-xnda)
 - Email: mosetsanakgape@gmail.com
