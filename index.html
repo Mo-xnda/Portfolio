@@ -9,6 +9,10 @@
 </head>
 <body>
 
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        &#127769; Dark Mode
+    </button>
+
     <nav class="top-nav">
         <a href="#home" class="nav-pill" onclick="showPage('home')">home</a>
         <a href="#about" class="nav-pill" onclick="showPage('about')">about</a>
@@ -56,13 +60,21 @@
                 <span class="widget-title">Note</span>
                 <span class="widget-icon"></span>
             </div>
-            <div class="widget-content">
+            <!-- <div class="widget-content">
                 <p class="note-text">&#127801; Mosetsanakgape Mafuma</p>
                 <p class="note-text">&#127801; 26 Years Old</p>
                 <p class="note-text">&#127801; Female</p>
                 <p class="note-text">&#127801; African</p>
                 <p class="note-text">&#127801; Fluent in English & Sotho/Tswana</p>
-                <p class="note-text">&#127801; Mildly fluent in Afrikaans/Zulu</p>
+                <p class="note-text">&#127801; Mildly fluent in Afrikaans/Zulu</p> -->
+            <div class="widget-content" id="note-content">
+                <p class="note-text typing-text" data-text="&#127801; Mosetsanakgape Mafuma"></p>
+                <p class="note-text typing-text" data-text="&#127801; 26 Years Old"></p>
+                <p class="note-text typing-text" data-text="&#127801; Female"></p>
+                <p class="note-text typing-text" data-text="&#127801; Programmer"></p>
+                <p class="note-text typing-text" data-text="&#127801; African"></p>
+                <p class="note-text typing-text" data-text="&#127801; Fluent in English & Sotho/Tswana"></p>
+                <p class="note-text typing-text" data-text="&#127801; Mildly fluent in Afrikaans/Zulu"></p>
             </div>
         </div>
 
@@ -109,8 +121,34 @@
     <div id="about-page" class="page">
         <div class="desktop-environment">
             
+            <!-- Work Folder -->
+            <div class="folder-section" style="position: absolute; left: 5%; top: 15%;">
+                <div class="folder-container">
+                    <div class="folder-bg"></div>
+                    <div class="folder-photos">
+                        <div class="photo-item" style="position: absolute; left: 20px; top: 15px; transform: rotate(2deg);width: 70px; height: 90px;">
+                            <img src="NWK3.jpg" alt="Project">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 90px; top: 40px; transform: rotate(-4deg); width: 80px; height: 100px;">
+                            <img src="nwk2.png" alt="Work">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 40px; top: 120px; transform: rotate(8deg); width: 70px; height: 90px;">
+                            <img src="nwk.jpg" alt="Achievement">
+                        </div>
+                        <div class="photo-item" style="position: absolute; left: 130px; top: 100px; transform: rotate(-6deg);width: 70px; height: 90px;">
+                            <img src="NWK4.jpg" alt="Event">
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-title">Work</div>
+                <ul class="folder-description">
+                    <li>NWK Learnership Programme 2025-2026</li>
+                    <li>NWK Programmer 2026-Current</li>
+                </ul>
+            </div>
+
             <!-- Skills Folder -->
-            <div class="folder-section" style="position: absolute; left: 15%; top: 15%;">
+            <div class="folder-section" style="position: absolute; right: 5%; top: 15%;">
                 <div class="folder-container">
                     <div class="folder-bg"></div>
                     <div class="folder-photos">
@@ -142,32 +180,29 @@
                     <li>Statistics</li>
                     <li>PHP</li>
                     <li>Laravel</li>
+                    <li>PHPMyAdmin</li>
+                    <li>C#</li>
+                    <li>Git</li>
                 </ul>
             </div>
 
-            <!-- Work Experience Folder -->
-            <div class="folder-section" style="position: absolute; right: 15%; top: 15%;">
+            <!-- Projects Folder -->
+            <div class="folder-section projects-folder">
                 <div class="folder-container">
                     <div class="folder-bg"></div>
                     <div class="folder-photos">
-                        <div class="photo-item" style="position: absolute; left: 20px; top: 15px; transform: rotate(2deg);width: 70px; height: 90px;">
-                            <img src="NWK3.jpg" alt="Project">
+                        <div class="photo-item" style="position: absolute; left: 50px; top: 30px; transform: rotate(-5deg); width: 90px; height: 100px;">
+                            <img src="nwk.jpg">
                         </div>
-                        <div class="photo-item" style="position: absolute; left: 90px; top: 40px; transform: rotate(-4deg); width: 80px; height: 100px;">
-                            <img src="nwk2.png" alt="Work">
-                        </div>
-                        <div class="photo-item" style="position: absolute; left: 40px; top: 120px; transform: rotate(8deg); width: 70px; height: 90px;">
-                            <img src="nwk.jpg" alt="Achievement">
-                        </div>
-                        <div class="photo-item" style="position: absolute; left: 130px; top: 100px; transform: rotate(-6deg);width: 70px; height: 90px;">
-                            <img src="NWK4.jpg" alt="Event">
+                        <div class="photo-item" style="position: absolute; left: 130px; top: 70px; transform: rotate(7deg); width: 85px; height: 95px;">
+                            <img src="nwk2.png">
                         </div>
                     </div>
                 </div>
-                <div class="folder-title">Work Experience</div>
+                <div class="folder-title">Projects</div>
                 <ul class="folder-description">
-                    <li>NWK Learnership Programme 2025-2026</li>
-                    <li>NWK Programmer 2026-Current</li>
+                    <li>NWK Online - Using CSS/HTML/JS/phpmyadmin?SQL to develop an online registration system for career day</li>
+                    <li>NWK Online - Using CSS/HTML/JS/phpmyadmin/PHP/SQL to develop an online system that bridges Online and the ERP to show NWK did you know facts</li>
                 </ul>
             </div>
 
@@ -223,6 +258,66 @@
         }
         
         document.body.className = 'home-bg';
+
+        // Dark Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        
+        // Check saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Set initial attribute if preference exists
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateToggleButton(savedTheme);
+        } else if (systemPrefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateToggleButton('dark');
+        }
+        
+        // Handle toggle click
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = 'dark';
+            
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+            }
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButton(newTheme);
+        });
+        
+        function updateToggleButton(theme) {
+            if (theme === 'dark') {
+                toggleButton.innerHTML = '&#9728; Light Mode';
+            } else {
+                toggleButton.innerHTML = '&#127769; Dark Mode';
+            }
+        }
+
+        // Typing Animation for Note Widget
+        function typeNoteText() {
+            const typingElements = document.querySelectorAll('.typing-text');
+            
+            typingElements.forEach((element, index) => {
+                const text = element.getAttribute('data-text');
+                
+                setTimeout(() => {
+                    element.innerHTML = text;
+                    element.style.animationDelay = '0s';
+                    
+                    // Remove cursor after typing completes
+                    setTimeout(() => {
+                        element.classList.add('typed');
+                    }, 2000);
+                }, index * 2200); // Delay each line by 2.2 seconds
+            });
+        }
+        
+        // Start typing animation when page loads
+        typeNoteText();
 
         // Generate Dynamic Calendar
         function generateCalendar() {
